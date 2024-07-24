@@ -1,0 +1,10 @@
+models:
+    Posts:
+        name: string
+        slug: string unique
+        content: string
+        relationships:
+            hasMany: users
+    Author:
+        user_id: id foreign
+        post_id: id foreign

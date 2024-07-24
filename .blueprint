@@ -1,0 +1,11 @@
+created:
+    - database/factories/PostsFactory.php
+    - database/factories/AuthorFactory.php
+    - database/migrations/2024_07_24_092352_create_posts_table.php
+    - database/migrations/2024_07_24_092353_create_authors_table.php
+    - app/Models/Posts.php
+    - app/Models/Author.php
+models:
+    User: { name: string, email: string, email_verified_at: 'timestamp nullable default:NULL', password: string, remember_token: 'string:100 nullable default:NULL' }
+    Posts: { name: string, slug: 'string unique', content: string, relationships: { hasMany: users } }
+    Author: { user_id: 'id foreign', post_id: 'id foreign' }
